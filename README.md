@@ -1,7 +1,8 @@
+
 # SysOps-Paris-Cite-
 
 ## Description
-Please follow the instructions below to clone, install dependencies, and get started with the project.
+This project consists of a **front-end** developed in React and a **back-end** built with Express.js. Please follow the instructions below to clone, install dependencies, and get started with the project.
 
 ---
 
@@ -35,25 +36,77 @@ Ensure that you have the following installed:
 - **Postman** (Optional: For API testing)  
   - [Download Postman here](https://www.postman.com/downloads/)
 
-#### Install the Required Packages:
-Run the following command to install the project dependencies:
+#### Installing Project Dependencies:
 
-```bash
-npm install
-```
+##### Front-end:
+1. Navigate to the front-end directory:
+   ```bash
+   cd front-end
+   ```
+
+2. Install the required dependencies:
+   ```bash
+   npm install
+   ```
+
+##### Back-end:
+1. Navigate to the back-end directory:
+   ```bash
+   cd ../back-end
+   ```
+
+2. Install the required dependencies:
+   ```bash
+   npm install
+   ```
 
 ---
 
 ### 3. Run the Project
-Once the dependencies are installed, you can start the project (if applicable) using:
 
+#### Front-end:
+To start the React development server:
 ```bash
+cd front-end
 npm start
 ```
+The application will be available at `http://localhost:3000`.
+
+#### Back-end:
+To start the Express server:
+```bash
+cd back-end
+npm start 
+```
+The server will be available at `http://localhost:5000` (or the configured port).
 
 ---
 
-### 4. Contribution Guidelines (Optional)
+### 4. Optional: Serve the Production Build
+
+If you want to test the production build locally:
+
+1. Build the front-end application:
+   ```bash
+   cd front-end
+   npm run build
+   ```
+
+2. Install `serve` globally (only once, if not already installed):
+   ```bash
+   npm install -g serve
+   ```
+
+3. Serve the production build:
+   ```bash
+   serve -s build
+   ```
+
+
+---
+
+### 5. Contribution Guidelines
+
 If you wish to contribute to this project, follow these steps:
 
 1. Create a new branch:
@@ -78,20 +131,43 @@ If you wish to contribute to this project, follow these steps:
 
 ## Summary of Commands
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Omar-Amaraa/SysOps-Paris-Cit-.git
-   cd SysOps-Paris-Cit-
-   ```
+### Clone the repository:
+```bash
+git clone https://github.com/Omar-Amaraa/SysOps-Paris-Cit-.git
+cd SysOps-Paris-Cit-
+```
 
-2. Install dependencies:
+### Front-end:
+1. Install dependencies:
    ```bash
+   cd front-end
    npm install
    ```
-
-3. Start the project:
+2. Start the development server:
    ```bash
    npm start
+   ```
+
+### Back-end:
+1. Install dependencies:
+   ```bash
+   cd ../back-end
+   npm install
+   ```
+2. Start the Express server:
+   ```bash
+   npm start
+   ```
+
+### Optional: Serve the production build:
+1. Build the front-end:
+   ```bash
+   cd front-end
+   npm run build
+   ```
+2. Serve the static files:
+   ```bash
+   serve -s build
    ```
 
 ---
