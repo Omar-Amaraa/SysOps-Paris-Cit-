@@ -4,29 +4,27 @@ const app = express()
 const pool = require('./database'); //connexion à la base de données
 
 const cors = require('cors');
+const allowedOrigins = [
+  'https://front-end-v9s5.onrender.com', //addresse du front-end
+  'http://localhost:3000',
+];
+
 app.use(cors({
-    origin: 'https://test-h4d4.onrender.com'
-  }));
-
-
-  app.get('/users', (req, res) => {
-    res.json({ users: ['Test User 1', 'Test User 2'] });
-  });
-  
-  
-  app.get('/test-db', async (req, res) => {
-    try {
-      const result = await pool.query('SELECT 1 + 1 AS result');
-      res.json({ result: result.rows[0].result });
-    } catch (err) {
-      console.error('Database connection failed:', err);
-      res.status(500).json({ error: err.message });
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
     }
-  });
+  },
+}));
+
+  
+  
   
   
 
-
+  
 
 
 app.listen(PORT, () => {
